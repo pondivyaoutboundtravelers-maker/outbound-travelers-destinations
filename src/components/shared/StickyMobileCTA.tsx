@@ -6,10 +6,10 @@ interface StickyMobileCTAProps {
   whatsappUrl: string
   phoneNumber: string
   accentColor: string
-  onEnquire: () => void
+  formEventName?: string
 }
 
-export default function StickyMobileCTA({ whatsappUrl, phoneNumber, accentColor, onEnquire }: StickyMobileCTAProps) {
+export default function StickyMobileCTA({ whatsappUrl, phoneNumber, accentColor, formEventName = 'openLeadForm' }: StickyMobileCTAProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -72,7 +72,7 @@ export default function StickyMobileCTA({ whatsappUrl, phoneNumber, accentColor,
 
       {/* Enquire Section */}
       <button
-        onClick={onEnquire}
+        onClick={() => window.dispatchEvent(new CustomEvent(formEventName))}
         className="flex-[2] flex items-center justify-center h-full text-white font-bold text-sm uppercase px-4 transition-colors"
         style={{ backgroundColor: accentColor }}
       >

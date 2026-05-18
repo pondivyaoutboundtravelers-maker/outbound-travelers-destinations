@@ -240,7 +240,6 @@ export default function KashmirPage() {
         headline="Your Kashmir story starts with one message."
         body="Tell us your dates, your travelers, and your idea of a perfect trip. We'll come back with a Kashmir plan that fits — usually within two hours."
         whatsappUrl={finalCtaWaUrl}
-        onGetQuote={() => window.dispatchEvent(new CustomEvent('openLeadForm'))}
       />
 
       {/* 21. Multi-Step Form dialog */}
@@ -251,7 +250,6 @@ export default function KashmirPage() {
         accentColor="#1F6E3F"
         phoneNumber="919876543210"
         whatsappUrl={stickyCtaWaUrl}
-        onEnquire={() => window.dispatchEvent(new CustomEvent('openLeadForm'))}
       />
 
       {/* 23. Sticky chat floater */}

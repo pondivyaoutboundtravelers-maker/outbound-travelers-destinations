@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react'
 
 interface FinalCTAProps {
@@ -5,10 +7,10 @@ interface FinalCTAProps {
   headline: string
   body: string
   whatsappUrl: string
-  onGetQuote?: () => void
+  formEventName?: string
 }
 
-export default function FinalCTA({ accentColor, headline, body, whatsappUrl, onGetQuote }: FinalCTAProps) {
+export default function FinalCTA({ accentColor, headline, body, whatsappUrl, formEventName = 'openLeadForm' }: FinalCTAProps) {
   return (
     <section 
       className="w-full py-16 px-4 md:px-8 text-center text-white"
@@ -33,14 +35,12 @@ export default function FinalCTA({ accentColor, headline, body, whatsappUrl, onG
             </svg>
             WhatsApp our Kashmir team
           </a>
-          {onGetQuote && (
-            <button
-              onClick={onGetQuote}
-              className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 transition-colors font-bold rounded-lg"
-            >
-              Send us your details
-            </button>
-          )}
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent(formEventName))}
+            className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 transition-colors font-bold rounded-lg"
+          >
+            Send us your details
+          </button>
         </div>
       </div>
     </section>
