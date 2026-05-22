@@ -1,5 +1,6 @@
+"use client";
+
 import React from 'react'
-import type { Metadata } from 'next'
 import '@/styles/kashmir.css'
 import { kashmirData } from '@/lib/kashmir/data'
 import { buildWhatsAppUrl } from '@/lib/shared/whatsapp'
@@ -30,31 +31,9 @@ import InclusionsExclusions from '@/components/kashmir/InclusionsExclusions'
 import GalleryGrid from '@/components/kashmir/GalleryGrid'
 import SEOContentBlock from '@/components/kashmir/SEOContentBlock'
 
-// Inline Client Component Controllers
+// Local Component Controllers
 import TulipFestivalBanner from './TulipFestivalBanner'
 import LeadFormModalController from './LeadFormModalController'
-
-// Metadata API Configuration
-export const metadata: Metadata = {
-  title: kashmirData.meta.title,
-  description: kashmirData.meta.description,
-  alternates: {
-    canonical: kashmirData.meta.canonical,
-  },
-  openGraph: {
-    title: kashmirData.meta.title,
-    description: kashmirData.meta.description,
-    url: kashmirData.meta.canonical,
-    images: [
-      {
-        url: kashmirData.meta.ogImage,
-        width: 1200,
-        height: 630,
-        alt: 'Kashmir Tour Packages',
-      },
-    ],
-  },
-}
 
 export default function KashmirPage() {
   // Build dynamic urls
@@ -99,7 +78,7 @@ export default function KashmirPage() {
             '@type': 'ListItem',
             'position': 3,
             'name': 'Kashmir Tour Packages',
-            'item': kashmirData.meta.canonical,
+            'item': 'https://www.outboundtravelers.com/kashmir',
           },
         ],
       },
@@ -214,7 +193,7 @@ export default function KashmirPage() {
       <TestimonialCarousel testimonials={kashmirData.testimonials} />
 
       {/* 17. Interactive FAQ list */}
-      <FAQAccordion faqs={kashmirData.faqs}>
+      <FAQAccordion title="Kashmir Travel FAQs" faqs={kashmirData.faqs}>
         <a
           href={finalCtaWaUrl}
           target="_blank"
@@ -253,10 +232,10 @@ export default function KashmirPage() {
       />
 
       {/* 23. Sticky chat floater */}
-      <WhatsAppFloatingButton whatsappUrl={floaterWaUrl} accentColor="#1F6E3F" />
+      <WhatsAppFloatingButton whatsappUrl={floaterWaUrl} accentColor="#1F6E3F" destinationName="Kashmir" />
 
       {/* 24. Exit Capture trigger modal */}
-      <ExitIntentModal whatsappUrl={exitIntentWaUrl} />
+      <ExitIntentModal whatsappUrl={exitIntentWaUrl} destinationName="Kashmir" />
     </div>
   )
 }

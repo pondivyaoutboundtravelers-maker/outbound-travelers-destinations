@@ -4,9 +4,10 @@ import React, { useEffect, useState } from 'react'
 
 interface ExitIntentModalProps {
   whatsappUrl: string
+  destinationName?: string
 }
 
-export default function ExitIntentModal({ whatsappUrl }: ExitIntentModalProps) {
+export default function ExitIntentModal({ whatsappUrl, destinationName = 'Kashmir' }: ExitIntentModalProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
@@ -60,9 +61,9 @@ export default function ExitIntentModal({ whatsappUrl }: ExitIntentModalProps) {
           </svg>
         </div>
 
-        <h3 className="text-2xl font-fraunces font-bold text-brand-navy mb-2">Planning a Kashmir trip?</h3>
+        <h3 className="text-2xl font-fraunces font-bold text-brand-navy mb-2">Planning a {destinationName} trip?</h3>
         <p className="text-sm md:text-base text-muted mb-6 leading-relaxed">
-          Get a free 15-minute planning call with our Kashmir specialist. We&apos;ll help you finalize hotels, sights, and timings with no obligation.
+          Get a free 15-minute planning call with our {destinationName} specialist. We&apos;ll help you finalize hotels, sights, and timings with no obligation.
         </p>
 
         <a
