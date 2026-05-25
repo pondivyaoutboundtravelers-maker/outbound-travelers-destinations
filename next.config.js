@@ -1,13 +1,23 @@
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: [
+    domains: ['picsum.photos'],
+  },
+  async redirects() {
+    return [
       {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
+        source: '/amritsar',
+        destination: '/destinations/amritsar-tour-packages',
+        permanent: true,
       },
-    ],
+      {
+        source: '/kerala',
+        destination: '/destinations/kerala-tour-packages',
+        permanent: true,
+      },
+    ]
   },
 };
 

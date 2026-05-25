@@ -193,7 +193,7 @@ export default function KashmirPage() {
       <TestimonialCarousel testimonials={kashmirData.testimonials} />
 
       {/* 17. Interactive FAQ list */}
-      <FAQAccordion title="Kashmir Travel FAQs" faqs={kashmirData.faqs}>
+      <FAQAccordion faqs={kashmirData.faqs} title="Kashmir Travel FAQs">
         <a
           href={finalCtaWaUrl}
           target="_blank"
@@ -219,6 +219,7 @@ export default function KashmirPage() {
         headline="Your Kashmir story starts with one message."
         body="Tell us your dates, your travelers, and your idea of a perfect trip. We'll come back with a Kashmir plan that fits — usually within two hours."
         whatsappUrl={finalCtaWaUrl}
+        whatsappButtonLabel="WhatsApp our Kashmir team"
       />
 
       {/* 21. Multi-Step Form dialog */}
