@@ -15,6 +15,8 @@ export interface Package {
   whatsappMessage: string
   seasonal: boolean
   seasonMonths?: number[]
+  featured?: boolean
+  tier?: string
 }
 
 export interface ItineraryDay {
@@ -34,6 +36,7 @@ export interface HotelTier {
 export interface MonthRating {
   month: string
   rating: 'best' | 'good' | 'okay' | 'avoid'
+  status?: 'peak' | 'shoulder' | 'off-peak' | 'wellness'
   note: string
 }
 
@@ -69,6 +72,7 @@ export interface RelatedDestination {
 export interface Experience {
   id: string
   title: string
+  subtitle?: string
   description: string
   image: string
   alt: string

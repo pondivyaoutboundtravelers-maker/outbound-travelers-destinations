@@ -43,7 +43,7 @@ export default function SeasonCalendarKerala() {
       <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-12 gap-2 mb-8">
         {keralaData.months.map((mObj) => {
           const isSelected = selectedMonth === mObj.month
-          const style = STATUS_STYLES[mObj.status]
+          const style = STATUS_STYLES[mObj.status as MonthStatus] || STATUS_STYLES['peak']
           return (
             <button
               key={mObj.month}
@@ -70,12 +70,12 @@ export default function SeasonCalendarKerala() {
 
       {/* Selected month info */}
       {activeMonth && (
-        <div className={`rounded-2xl p-5 md:p-6 border mb-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 ${STATUS_STYLES[activeMonth.status].badge}`}>
+        <div className={`rounded-2xl p-5 md:p-6 border mb-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 ${STATUS_STYLES[activeMonth.status as MonthStatus || 'peak'].badge}`}>
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-1.5">
               <span className="font-bold text-brand-navy font-fraunces text-base">Kerala in {activeMonth.month}</span>
-              <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${STATUS_STYLES[activeMonth.status].badge}`}>
-                {STATUS_STYLES[activeMonth.status].label}
+              <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${STATUS_STYLES[activeMonth.status as MonthStatus || 'peak'].badge}`}>
+                {STATUS_STYLES[activeMonth.status as MonthStatus || 'peak'].label}
               </span>
               {isPeak && (
                 <span className="bg-red-50 text-red-700 border border-red-200 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">

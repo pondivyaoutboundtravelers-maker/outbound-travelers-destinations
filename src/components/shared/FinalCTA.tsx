@@ -10,6 +10,7 @@ interface FinalCTAProps {
   whatsappButtonLabel?: string
   getQuoteLabel?: string
   onGetQuote?: () => void
+  formEventName?: string
 }
 
 export default function FinalCTA({
@@ -19,13 +20,14 @@ export default function FinalCTA({
   whatsappUrl,
   whatsappButtonLabel = 'WhatsApp our travel team',
   getQuoteLabel = 'Send us your details',
-  onGetQuote
+  onGetQuote,
+  formEventName
 }: FinalCTAProps) {
   const handleGetQuote = () => {
     if (onGetQuote) {
       onGetQuote()
     } else {
-      window.dispatchEvent(new CustomEvent('openLeadForm'))
+      window.dispatchEvent(new CustomEvent(formEventName || 'openLeadForm'))
     }
   }
 

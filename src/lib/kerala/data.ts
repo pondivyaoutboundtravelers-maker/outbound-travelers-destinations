@@ -6,6 +6,8 @@ import type {
   Testimonial,
   RelatedDestination,
   ProcessStep,
+  Season,
+  MonthRating,
 } from '@/lib/shared/types'
 
 export const keralaData = {
@@ -265,7 +267,7 @@ export const keralaData = {
     { month: 'Oct', status: 'peak' as const, note: 'Pleasant. All sights open.' },
     { month: 'Nov', status: 'peak' as const, note: 'Ideal weather. High season.' },
     { month: 'Dec', status: 'peak' as const, note: 'Peak — Christmas and New Year travel. Book 45+ days early.' },
-  ],
+  ] as unknown as MonthRating[],
 
   seasons: [
     { id: 'peak', label: 'Sep–Mar Peak', months: 'September to March', description: 'Best weather for all activities. Houseboat, beaches, wildlife all open. Book Dec–Feb early.', image: 'https://picsum.photos/seed/kerala-season-peak/800/600' },

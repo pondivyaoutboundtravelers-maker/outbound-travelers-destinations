@@ -6,7 +6,6 @@ import type { FAQ } from '@/lib/shared/types'
 interface FAQAccordionProps {
   title?: string
   faqs: FAQ[]
-  title?: string
   onExpand?: (question: string) => void
   children?: React.ReactNode
   /** Text color for headings & questions. Defaults to brand-navy. Pass 'white' for dark backgrounds. */
@@ -19,7 +18,16 @@ interface FAQAccordionProps {
   accentColor?: string
 }
 
-export default function FAQAccordion({ faqs, onExpand, children }: FAQAccordionProps) {
+export default function FAQAccordion({
+  title,
+  faqs,
+  onExpand,
+  children,
+  textColor,
+  answerColor,
+  borderColor,
+  accentColor,
+}: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const handleToggle = (index: number, question: string) => {
@@ -40,8 +48,8 @@ export default function FAQAccordion({ faqs, onExpand, children }: FAQAccordionP
 
   return (
     <section className="py-12 md:py-16 px-4 md:px-8 max-w-3xl mx-auto">
-      <h2 className="text-2xl md:text-3xl text-brand-navy font-bold text-center mb-8">
-        Kashmir Travel FAQs
+      <h2 className={`text-2xl md:text-3xl font-bold text-center mb-8 ${headingColorClass}`}>
+        {title || 'Kashmir Travel FAQs'}
       </h2>
       <div className="space-y-4">
         {faqs.map((faq, idx) => {

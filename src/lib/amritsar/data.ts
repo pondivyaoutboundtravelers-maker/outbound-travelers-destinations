@@ -153,7 +153,7 @@ export const amritsarData = {
     { month: 'Oct', status: 'peak' as const, note: 'Post-monsoon clarity. Peak season starts.' },
     { month: 'Nov', status: 'peak' as const, note: 'Best weather. Gurpurab festival possible.' },
     { month: 'Dec', status: 'peak' as const, note: 'Cool and crisp. Christmas + New Year travel.' },
-  ] as MonthRating[],
+  ] as unknown as MonthRating[],
   seasons: [
     { id: 'peak', label: 'Oct–Mar Peak', months: 'October to March', description: 'Pleasant 10–22°C. Best time for Golden Temple and Wagah. Book 30+ days ahead in Nov–Feb.', image: 'https://picsum.photos/seed/amritsar-season-peak/800/600' },
     { id: 'shoulder', label: 'Apr–Jun Shoulder', months: 'April to June', description: 'Hot 28–42°C but fewer crowds and lower prices. Early morning visits make it bearable.', image: 'https://picsum.photos/seed/amritsar-season-shoulder/800/600' },
