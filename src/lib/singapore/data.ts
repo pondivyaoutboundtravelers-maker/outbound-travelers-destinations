@@ -8,7 +8,7 @@ export const singaporeData = {
   meta: {
     title: 'Premium Singapore Tour Packages — Customizable Trips | Outbound Travelers',
     description: 'Plan your premium Singapore trip with Outbound Travelers. Discover futuristic luxury, Sentosa beaches, Universal Studios, and multi-city combos. Free e-visa processing, direct flights, and 24/7 concierge support.',
-    canonical: 'https://www.outboundtravelers.com/international/singapore-tour-packages',
+    canonical: 'https://www.outboundtravelers.com/singapore',
     ogImage: '/images/singapore/og-singapore.jpg',
     h1: 'Singapore Tour Packages — Futuristic Luxury & Tropical Elegance',
   },

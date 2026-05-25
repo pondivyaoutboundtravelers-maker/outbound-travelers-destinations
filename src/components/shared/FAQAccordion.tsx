@@ -8,9 +8,26 @@ interface FAQAccordionProps {
   faqs: FAQ[]
   onExpand?: (question: string) => void
   children?: React.ReactNode
+  /** Text color for headings & questions. Defaults to brand-navy. Pass 'white' for dark backgrounds. */
+  textColor?: string
+  /** Text color for answer body. Defaults to muted. */
+  answerColor?: string
+  /** Border color for dividers. Defaults to border-soft. */
+  borderColor?: string
+  /** Icon/accent color. Defaults to kashmir-accent. */
+  accentColor?: string
 }
 
-export default function FAQAccordion({ title, faqs, onExpand, children }: FAQAccordionProps) {
+export default function FAQAccordion({
+  title,
+  faqs,
+  onExpand,
+  children,
+  textColor,
+  answerColor,
+  borderColor,
+  accentColor,
+}: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const handleToggle = (index: number, question: string) => {
@@ -24,25 +41,30 @@ export default function FAQAccordion({ title, faqs, onExpand, children }: FAQAcc
     }
   }
 
+  const headingColorClass = textColor || 'text-brand-navy'
+  const answerColorClass = answerColor || 'text-muted'
+  const borderColorClass = borderColor || 'border-border-soft'
+  const iconColorClass = accentColor || 'text-kashmir-accent'
+
   return (
     <section className="py-12 md:py-16 px-4 md:px-8 max-w-3xl mx-auto">
-      <h2 className="text-2xl md:text-3xl text-brand-navy font-bold text-center mb-8">
+      <h2 className={`text-2xl md:text-3xl font-bold text-center mb-8 ${headingColorClass}`}>
         {title || 'Kashmir Travel FAQs'}
       </h2>
       <div className="space-y-4">
         {faqs.map((faq, idx) => {
           const isOpen = openIndex === idx
           return (
-            <div key={idx} className="border-b border-border-soft pb-4">
+            <div key={idx} className={`border-b ${borderColorClass} pb-4`}>
               <button
-                className="w-full flex justify-between items-center text-left py-3 font-bold text-brand-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta rounded"
+                className={`w-full flex justify-between items-center text-left py-3 font-bold ${headingColorClass} focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cta rounded`}
                 onClick={() => handleToggle(idx, faq.q)}
                 aria-expanded={isOpen}
                 aria-controls={`faq-answer-${idx}`}
               >
                 <span>{faq.q}</span>
                 <span
-                  className={`ml-4 transform transition-transform duration-200 text-kashmir-accent flex-shrink-0`}
+                  className={`ml-4 transform transition-transform duration-200 ${iconColorClass} flex-shrink-0`}
                   style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
                 >
                   <svg
@@ -68,7 +90,7 @@ export default function FAQAccordion({ title, faqs, onExpand, children }: FAQAcc
                   opacity: isOpen ? 1 : 0,
                 }}
               >
-                <p className="text-sm md:text-base text-muted pt-2 leading-relaxed">
+                <p className={`text-sm md:text-base ${answerColorClass} pt-2 leading-relaxed`}>
                   {faq.a}
                 </p>
               </div>

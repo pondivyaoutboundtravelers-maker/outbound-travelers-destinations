@@ -29,5 +29,28 @@ export const destinationRegistry: Record<string, React.ComponentType<any>> = {
   singapore: dynamic(() => import("@/components/singapore/SingaporePage"), {
     ssr: true,
   }),
+  andaman: dynamic(() => import("@/components/andaman/AndamanPage"), {
+    ssr: true,
+  }),
+  langkawi: dynamic(() => import("@/components/langkawi/LangkawiPage"), {
+    ssr: true,
+  }),
+  delhi: dynamic(() => import("@/components/delhi/DelhiPage"), {
+    ssr: true,
+  }),
+  agra: dynamic(() => import("@/components/agra/AgraPage"), {
+    ssr: true,
+  }),
+  jaipur: dynamic(() => import("@/components/jaipur/JaipurPage"), {
+    ssr: true,
+  }),
+  dubai: dynamic(() => import("@/components/dubai/DubaiPage"), {
+    ssr: true,
+  }),
+  maldives: dynamic(() => import("@/components/maldives/MaldivesPage"), {
+    ssr: true,
+  }),
+  nepal: dynamic(() => import("@/components/nepal/NepalPage"), {
+    ssr: true,
+  }),
 };
-

@@ -18,7 +18,6 @@ const config: Config = {
         'cream': '#FFFBF5',
         'muted': '#5A6B7A',
         'border-soft': '#E5DCD0',
-        
         // Vibrant Tropical Palette (Singapore)
         'light-blue': '#E6F4FF',
         'sky-light': '#F0F9FF',
@@ -34,6 +33,12 @@ const config: Config = {
         'dark-text': '#1F2937',
         'medium-text': '#4B5563',
         'light-divider': '#E5E7EB',
+        // Andaman palette (custom)
+        'andaman-primary': '#0E7490',
+        'andaman-gold': '#C9A84C',
+        'andaman-deep-navy': '#0A1628',
+        'andaman-pearl-white': '#F5F0E8',
+        'andaman-coral': '#E07B5A',
       },
       fontFamily: {
         fraunces: ['var(--font-fraunces)', 'serif'],
@@ -49,7 +54,7 @@ const config: Config = {
         slideUp: { '0%': { transform: 'translateY(100%)' }, '100%': { transform: 'translateY(0)' } },
         fadeIn: { '0%': { opacity: '0', transform: 'translateY(12px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
         shimmer: { '100%': { transform: 'translateX(100%)' } },
-      }
+      },
     },
   },
   plugins: [],

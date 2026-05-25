@@ -1,6 +1,13 @@
 import { kashmirData } from "@/lib/kashmir/data";
 import { sikkimData } from "@/lib/sikkim/data";
 import { singaporeData } from "@/lib/singapore/data";
+import { andamanData } from "@/lib/andaman/data";
+import { delhiData } from "@/lib/delhi/data";
+import { agraData } from "@/lib/agra/data";
+import { jaipurData } from "@/lib/jaipur/data";
+import { dubaiData } from "@/lib/dubai/data";
+import { maldivesData } from "@/lib/maldives/data";
+import { nepalData } from "@/lib/nepal/data";
 
 export interface DestinationSEO {
   title: string;
@@ -138,9 +145,114 @@ export const destinationsConfig: Record<string, DestinationConfig> = {
     seo: {
       title: singaporeData.meta.title,
       description: singaporeData.meta.description,
-      canonical: "https://www.outboundtravelers.com/international/singapore-tour-packages",
+      canonical: "https://www.outboundtravelers.com/singapore",
       ogImage: singaporeData.meta.ogImage,
     },
   },
+  andaman: {
+    id: "andaman",
+    title: "Andaman Tour Packages",
+    description: andamanData.meta.description,
+    heroImage: "/images/andaman/hero-desktop.jpg",
+    themeColor: "#0B3C5D",
+    seo: {
+      title: andamanData.meta.title,
+      description: andamanData.meta.description,
+      canonical: "https://www.outboundtravelers.com/andaman",
+      ogImage: andamanData.meta.ogImage,
+    },
+  },
+  langkawi: {
+    id: "langkawi",
+    title: "Langkawi Tour Packages",
+    description:
+      "Discover Langkawi's stunning beaches, cable cars, and island hopping. Luxury and honeymoon packages from South India.",
+    heroImage: "/images/langkawi/hero.jpg",
+    themeColor: "#0E7490",
+    seo: {
+      title: "Premium Langkawi Tour Packages | Island Luxury | Outbound Travelers",
+      description:
+        "Explore Langkawi's pristine beaches, Langkawi Sky Bridge, island hopping, and duty-free shopping. Custom honeymoon and family packages.",
+      canonical: "https://www.outboundtravelers.com/langkawi",
+      ogImage: "/images/langkawi/hero.jpg",
+    },
+  },
+  delhi: {
+    id: "delhi",
+    title: "Delhi Tour Packages",
+    description: delhiData.meta.description,
+    heroImage: "/images/delhi/hero.jpg",
+    themeColor: "#7C2D12",
+    seo: {
+      title: delhiData.meta.title,
+      description: delhiData.meta.description,
+      canonical: "https://www.outboundtravelers.com/delhi",
+      ogImage: delhiData.meta.ogImage,
+    },
+  },
+  agra: {
+    id: "agra",
+    title: "Agra Tour Packages",
+    description: agraData.meta.description,
+    heroImage: "/images/agra/hero.jpg",
+    themeColor: "#0B3D2E",
+    seo: {
+      title: agraData.meta.title,
+      description: agraData.meta.description,
+      canonical: "https://www.outboundtravelers.com/agra",
+      ogImage: agraData.meta.ogImage,
+    },
+  },
+  jaipur: {
+    id: "jaipur",
+    title: "Jaipur Tour Packages",
+    description: jaipurData.meta.description,
+    heroImage: "/images/jaipur/hero.jpg",
+    themeColor: "#0B3D2E",
+    seo: {
+      title: jaipurData.meta.title,
+      description: jaipurData.meta.description,
+      canonical: "https://www.outboundtravelers.com/jaipur",
+      ogImage: jaipurData.meta.ogImage,
+    },
+  },
+  dubai: {
+    id: "dubai",
+    title: "Dubai Tour Packages",
+    description: dubaiData.meta.description,
+    heroImage: "/images/dubai/hero.jpg",
+    themeColor: "#050816",
+    seo: {
+      title: dubaiData.meta.title,
+      description: dubaiData.meta.description,
+      canonical: "https://www.outboundtravelers.com/dubai",
+      ogImage: dubaiData.meta.ogImage,
+    },
+  },
+  maldives: {
+    id: "maldives",
+    title: "Maldives Tour Packages",
+    description: maldivesData.meta.description,
+    heroImage: "/images/maldives/hero.jpg",
+    themeColor: "#0B3D2E",
+    seo: {
+      title: maldivesData.meta.title,
+      description: maldivesData.meta.description,
+      canonical: "https://www.outboundtravelers.com/maldives",
+      ogImage: maldivesData.meta.ogImage,
+    },
+  },
+  nepal: {
+    id: "nepal",
+    title: "Nepal Tour Packages",
+    description: nepalData.meta.description,
+    heroImage: "/images/nepal/hero.jpg",
+    themeColor: "#0B3D2E",
+    seo: {
+      title: nepalData.meta.title,
+      description: nepalData.meta.description,
+      canonical: "https://www.outboundtravelers.com/nepal",
+      ogImage: nepalData.meta.ogImage,
+    },
+  },
 };
-

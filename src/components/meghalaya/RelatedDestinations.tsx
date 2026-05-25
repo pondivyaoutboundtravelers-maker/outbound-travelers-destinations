@@ -10,7 +10,7 @@ const destinations = [
   {
     name: "Sikkim",
     image: "/images/meghalaya/shillong.jpg", // Using existing placeholder
-    link: "/destinations/sikkim-tour-packages",
+    link: "/sikkim",
     tagline: "The Himalayan Kingdom",
   },
   {
@@ -22,7 +22,7 @@ const destinations = [
   {
     name: "Assam",
     image: "/images/meghalaya/kaziranga.jpg", // Using existing placeholder
-    link: "/destinations/assam-tour-packages",
+    link: "/assam",
     tagline: "Land of the One-Horned Rhino",
   },
 ];
@@ -52,7 +52,7 @@ export default function RelatedDestinations() {
             </motion.p>
           </div>
           
-          <Link href="/destinations" className="group flex items-center gap-2 font-medium text-[#065F46]">
+          <Link href="/" className="group flex items-center gap-2 font-medium text-[#065F46]">
             View All Destinations
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>

@@ -66,7 +66,7 @@ export default function SingaporePage() {
             '@type': 'ListItem',
             'position': 3,
             'name': 'Singapore Tour Packages',
-            'item': 'https://www.outboundtravelers.com/international/singapore-tour-packages',
+            'item': 'https://www.outboundtravelers.com/singapore',
           },
         ],
       },
